@@ -8,6 +8,7 @@ def main():
         metric_id = 'test_metric_id',           # required
         title     = "This is the test metric",
         category  = "Test category",
+        indicator = False,
         slo       = 0.95,
         slo_min   = 0.90,
         weight    = 0.5

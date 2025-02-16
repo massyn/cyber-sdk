@@ -9,6 +9,7 @@ def main(domains):
         metric_id = 'dns_domain_expity',
         title     = "Domains not expiring in the next 30 days",
         category  = "Governance",
+        indicator = False,
         slo       = 1.00,
         slo_min   = 0.90,
         weight    = 0.5
