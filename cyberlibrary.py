@@ -30,6 +30,10 @@ class CyberLibrary():
             print("WARNING - category was not set.  Will default to undefined")
         self.meta['category'] = KW.get('category','undefined')
 
+        if not 'indicator' in KW:
+            print("WARNING - indicator was not set.  Will default to false")
+        self.meta['indicator'] = KW.get('indicator',False)
+
         self.meta['slo'] = KW.get('slo',0.95)
         if not 'slo' in KW:
             print("WARNING - slo was not set.  Will default to 0.95")
@@ -85,6 +89,7 @@ class CyberLibrary():
             'slo'           : self.meta['slo'],
             'slo_min'       : self.meta['slo_min'],
             'weight'        : self.meta['weight'],
+            'indicator'     : self.meta['indicator'],
 
             # add the specific data point details
             'resource'      : KW['resource'],
