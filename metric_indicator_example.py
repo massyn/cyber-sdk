@@ -5,12 +5,12 @@ def main():
 
     # initialise the metric definition
     M.metric(
-        metric_id = 'test_metric_id',           # required
-        title     = "This is the test metric",
+        metric_id = 'test_indicator_id',           # required
+        title     = "This is the test indicator",
         category  = "Test category",
-        indicator = False,
-        slo       = 0.90,
-        slo_min   = 0.50,
+        indicator = True,
+        slo       = 320,
+        slo_min   = 200,
         weight    = 0.5
     )
 
@@ -35,12 +35,9 @@ def main():
         detail = "Host C is not compliant"
     )
 
-    M.summary()
+    #M.summary()
     # == push the data to the dashboard
     M.publish()
-
-    #print(M.data)
-
 
 
 main()

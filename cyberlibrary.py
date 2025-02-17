@@ -38,22 +38,14 @@ class CyberLibrary():
         if not 'slo' in KW:
             print("WARNING - slo was not set.  Will default to 0.95")
         else:
-            if self.meta['slo'] > 1 or self.meta['slo'] < 0:
-                print(f"WARNING: slo can only be between 0 and 1.  It was set to {self.meta['slo']}.  Defaulting to 0.95")
-                self.meta['slo'] = 0.95
+            self.meta['slo'] = 0.95
         
         self.meta['slo_min'] = KW.get('slo_min',0.90)
         if not 'slo_min' in KW:
             print("WARNING - slo_min was not set.  Will default to 0.90")
         else:
-            if self.meta['slo_min'] > 1 or self.meta['slo_min'] < 0:
-                print(f"WARNING: slo_min can only be between 0 and 1.  It was set to {self.meta['slo_min']}.  Defaulting to 0.90")
-                self.meta['slo_min'] = 0.90
+            self.meta['slo_min'] = 0.90
 
-        if self.meta['slo_min'] > self.meta['slo']:
-            print(f"WARNING - slo_min cannot be bigger than slo.")
-            self.meta['slo_min'] = self.meta['slo']
-        
         self.meta['weight'] = KW.get('weight',0.5)
         if not 'weight' in KW:
             print("WARNING - weight was not set.  Will default to 0.5")
